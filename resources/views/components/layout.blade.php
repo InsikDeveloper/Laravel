@@ -13,12 +13,12 @@
     </head>
     <body class=" bg-slate-100 font-poppins">
 
-        <header class="bg-slate-900 text-white py-6 px-4">
+        <header class="bg-slate-900 text-white py-6 px-4 shadow-xl" >
             <nav class="flex justify-between items-center">
-                <h1><a href="{{route('home')}}" class="text-3xl font-semibold">Bootcamp ni Michael</a></h1>
+                <h1><a href="{{route('home')}}" class="text-3xl font-semibold">FreeCodeCamp ni Michael</a></h1>
 
                 <div>
-                    <a href="{{route('add-course')}}" class="group ring-2 p-3 ring-white/90 rounded-sm hover:bg-sky-500 hover:ring-sky-500
+                    <a href="{{route('add-course')}}" class="group ring-2 py-3 px-4 ring-white/90 rounded-sm hover:bg-sky-500 hover:ring-sky-500
                     ">
                         <i class="bi bi-plus-lg font-bold"></i>
                     </a>

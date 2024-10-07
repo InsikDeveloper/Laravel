@@ -20,11 +20,11 @@
                 <label for="duration" class="block">Course Duration</label>
                 {{-- <input type="text" name="duration" placeholder="course duration..." class="border rounded p-2 w-full">--}}
                 <select name="duration" id="duration" class="w-full text-center py-2 bg-slate-900/10">
-                    <option value="">1d</option>
-                    <option value="">1w</option>
-                    <option value="">1m</option>
-                    <option value="">2m</option>
-                    <option value="">Others</option>
+                    <option value="1week">1 Week</option>
+                    <option value="1week">2 Weeks</option>
+                    <option value="1week">1 Month</option>
+                    <option value="1week">3 Months</option>
+                    <option value="1week">6 Months</option>
                 </select>
             </div>
 
