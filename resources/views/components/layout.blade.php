@@ -12,7 +12,7 @@
         @vite('resources/css/app.css')
     </head>
     <body class=" bg-slate-100 font-poppins">
-
+{{-- 
         <header class="bg-slate-900 text-white py-6 px-4 shadow-xl" >
             <nav class="flex justify-between items-center">
                 <h1><a href="{{route('home')}}" class="text-3xl font-semibold">FreeCodeCamp ni Michael</a></h1>
@@ -26,9 +26,46 @@
 
                 </div>
             </nav>
-        </header>
-        <main class=" p-4">
-            {{$slot}}
-        </main>
+        </header> --}}
+        <div class="flex">
+            <div class="nav">
+                <header>
+                    <h1><a href="{{route('home')}}" class="text-xl font-semibold border-b-[1px] pb-3 border-white/30 text-white/90">FreeCodeCamp ni Michael</a></h1>
+                     
+                </header>
+                <nav>
+                    <div class="navigation">
+                        <span><i class="bi bi-house"></i></span>
+                        <a href="{{route('home')}}">Dashboard</a>
+                    </div>
+
+                    <div class="navigation">
+                        <span><i class="bi bi-journal-check"></i></span>
+                        <a href="{{route('courses')}}">Courses</a>
+                    </div>
+
+                    <div class="navigation">
+                        <span><i class="bi bi-pencil"></i></span>
+                        <a href="#">Instructor</a>
+                    </div>
+
+                    <div class="navigation">
+                        <span><i class="bi bi-people"></i></span>
+                        <a href="#">Students</a>
+                    </div>
+
+                    <div class="navigation">
+                        <span><i class="bi bi-box-arrow-left"></i></span>
+                        <a href="#">Logout</a>
+                    </div>
+                </nav>
+
+            </div>
+            <main class=" p-4 border-2 w-[77vw]">
+                {{$slot}}
+            </main>
+
+        </div>
+       
     </body>
 </html>

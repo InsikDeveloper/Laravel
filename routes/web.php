@@ -17,7 +17,10 @@ Route::post('register',[AuthController::class, 'register'])->name('regiter');
 // Login
 Route::view('/login','auth.login')->name('login');
 
-Route::get('/', [CourseController::class, 'showCourses'])->name('home');
+Route::view('/', 'posts.index')->name('home');
+
+
+Route::get('/courses', [CourseController::class, 'showCourses'])->name('courses');
 Route::get('/courses/{id}', [CourseController::class, 'showCourse'])->name('show_course');
 
 

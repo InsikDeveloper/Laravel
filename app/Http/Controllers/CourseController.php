@@ -25,9 +25,9 @@ class CourseController extends Controller
 
     // Get Data
     public function showCourses(){
-        $courses = CourseInformation::orderBy('created_at', 'desc')->get();
+        $courses = CourseInformation::latest()->get();
 
-        return view('posts.index', compact('courses'));
+        return view('posts.courses', compact('courses'));
 
     }
 
