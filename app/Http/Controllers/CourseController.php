@@ -10,7 +10,7 @@ class CourseController extends Controller
 
     // Adding Data
     public function addCourse(Request $request)  {
-     
+
         $fields = $request->validate([
             'title'=>['required'],
             'description'=>['required'],
@@ -20,7 +20,7 @@ class CourseController extends Controller
         CourseInformation::create($fields);
 
         return redirect()->route('home');
-       
+
     }
 
     // Get Data
@@ -33,13 +33,13 @@ class CourseController extends Controller
 
     public function showCourse($id){
          // Retrieve the course by ID
-         $course = CourseInformation::findOrFail($id); 
+         $course = CourseInformation::findOrFail($id);
 
          return view('posts.show_course', compact('course'));
     }
 
     public function delete($id){
-        $course = CourseInformation::findOrFail($id); 
+        $course = CourseInformation::findOrFail($id);
 
         $course->delete();
 

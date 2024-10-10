@@ -6,7 +6,7 @@
             {{-- Course Title --}}
             <div class="space-y-2">
                 <label for="title" class="block">Course Title</label>
-                <input type="text" name="title" placeholder="course title..." class="border rounded p-2 w-full">
+                <input type="text" name="title" placeholder="course title..." class="border rounded p-2 w-full" >
                 @error('title')
                     <p class="font-sm text-red-500">Please enter a title</p>
                 @enderror
@@ -17,8 +17,8 @@
                 <label for="description" class="block">Course Description</label>
                 {{-- <input type="text" name="description" placeholder="course description..." class="border rounded p-2 w-full"> --}}
                 <textarea name="description" id="" cols="30" rows="10" placeholder=""  ></textarea>
-                @error('title')
-                <p class="font-sm text-red-500">Please enter a description</p>
+                @error('description')
+                <p class="font-sm text-red-500">{{$message}}</p>
             @enderror
             </div>
 
@@ -33,8 +33,8 @@
                     <option value="3 Months">3 Months</option>
                     <option value="6 Months">6 Months</option>
                 </select>
-                @error('title')
-                <p class="font-sm text-red-500">Please select a duration time</p>
+                @error('duration')
+                <p class="font-sm text-red-500">{{$message}}</p>
             @enderror
             </div>
 
