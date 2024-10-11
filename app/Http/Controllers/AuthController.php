@@ -19,7 +19,7 @@ public function register(Request $request){
 
     $fields = $request->validate([
         'username'=>['required','max:255'],
-        'email'=>['required','email','max:255','unique:users'],
+        'email'=>['required','email','max:255'],
         'password'=>['required','min:8','confirmed'],
 
     ]);
@@ -40,17 +40,29 @@ public function register(Request $request){
 
 // LOGIN
 
-public function login(){
+public function login(Request $request){
     // validate
-    
-    $fields = $request->validate([
-        'username'=>['required','max:255'],
-        'email'=>['required','email','max:255','unique:users'],
-        'password'=>['required','min:8'],
-
+    $user = $request->validate([
+        'email'=>['required','email'],
+        'password'=>['required']
     ]);
-    //login
 
-    // Redirect
+    //login
+    if(Auth::attempt($user, $request->remember))
+    return redirect()->intended();
+
+    return back()->withErrors([
+        'failed' => 'The provided credentials do not match our records'
+    ]);    
+
+
+}
+public function logout(Request $request){
+    Auth::logout();
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect()->route('login');
 }
 }

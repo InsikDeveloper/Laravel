@@ -23,9 +23,9 @@
         @apply flex flex-col gap-5;
     }
 
-    input,
+    .input,
     textarea {
-        @apply w-full p-2 border border-gray-400 rounded-lg focus:outline-orange-500;
+        @apply w-full p-2 border border-gray-400 rounded-lg focus:outline-orange-500 text-sm;
     }
 
     label {

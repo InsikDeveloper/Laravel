@@ -8,7 +8,7 @@
         {{-- Username --}}
         <div>
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" class="@error('username') ring-red-500 @enderror">
+            <input type="text" id="username" name="username" class="input @error('username') ring-red-500 @enderror">
             @error('username')
                 <p class="text-xs text-red-500">{{$message}}</p>
             @enderror
@@ -17,7 +17,7 @@
         {{-- Email --}}
         <div>
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email" class="@error('email') ring-red-500 @enderror" >
+            <input type="text" id="email" name="email" class="input @error('email') ring-red-500 @enderror" >
             @error('email')
             <p class="text-xs text-red-500">{{$message}}</p>
         @enderror
@@ -26,7 +26,7 @@
         {{-- Password --}}
         <div>
             <label for="password">Password:</label>
-            <input type="text" id="password" name="password" class="@error('password') ring-red-500 @enderror">
+            <input type="text" id="password" name="password" class="input @error('password') ring-red-500 @enderror">
             @error('password')
             <p class="text-xs text-red-500">{{$message}}</p>
         @enderror
@@ -34,7 +34,7 @@
         {{-- COnfirm Password--}}
         <div>
             <label for="password">Confirm Password:</label>
-            <input type="text" id="password_confirmation" name="password_confirmation" class="@error('password') ring-red-500 @enderror" >
+            <input type="text" id="password_confirmation" name="password_confirmation" class="input @error('password') ring-red-500 @enderror" >
             @error('password')
             <p class="text-xs text-red-500">{{$message}}</p>
         @enderror
