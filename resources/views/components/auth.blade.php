@@ -17,7 +17,11 @@
     <div class="w-3/4 flex shadow-xl rounded-xl">
         <div class="w-1/2 flex justify-center items-center bg-black/70  rounded-l-xl">
 
-            <h1 class="text-5xl font-semibold text-white">Logo</h1>
+            {{-- <h1 class="text-5xl font-semibold text-white">Logo</h1> --}}
+
+            <img src="{{asset('assets/logo.png')}}" class="rounded-l-xl" alt="">
+
+
 
         </div>
 
