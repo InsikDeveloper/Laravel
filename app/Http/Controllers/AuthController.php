@@ -14,9 +14,6 @@ class AuthController extends Controller
 public function register(Request $request){
     // validate
 
-
-
-
     $fields = $request->validate([
         'username'=>['required','max:255'],
         'email'=>['required','email','max:255'],
@@ -34,7 +31,7 @@ public function register(Request $request){
 
 
     // Redirect
-    return redirect()->route('home');
+    return redirect()->route('dashboard');
 }
 
 
@@ -49,7 +46,7 @@ public function login(Request $request){
 
     //login
     if(Auth::attempt($user, $request->remember))
-    return redirect()->intended();
+    return redirect()->intended('dashboard');
 
     return back()->withErrors([
         'failed' => 'The provided credentials do not match our records'

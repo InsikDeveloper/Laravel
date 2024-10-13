@@ -30,23 +30,23 @@
         <div class="flex">
             <div class="nav relative ">
                 <header>
-                    <h1><a href="{{route('home')}}" class="text-xl font-semibold border-b-[1px] pb-3 border-white/30 text-white/90">FreeCodeCamp ni Michael</a></h1>
+                    <h1><a href="{{route('dashboard')}}" class="text-xl font-semibold border-b-[1px] pb-3 border-white/30 text-white/90">FreeCodeCamp ni Michael</a></h1>
                      
                 </header>
                 <nav>
                     <div class="navigation ">
                         <span><i class="bi bi-house"></i></span>
-                        <a href="{{route('home')}}">Dashboard</a>
+                        <a href="{{route('dashboard')}}">Dashboard</a>
                     </div>
 
                     <div class="navigation">
                         <span><i class="bi bi-journal-check"></i></span>
-                        <a href="{{route('courses')}}">Courses</a>
+                        <a href="{{route('coures.index')}}">Courses</a>
                     </div>
 
                     <div class="navigation">
                         <span><i class="bi bi-pencil"></i></span>
-                        <a href="#">Instructor</a>
+                        <a href="{{route('instructors.index')}}">Instructor</a>
                     </div>
 
                     <div class="navigation">
@@ -63,8 +63,9 @@
 
                 <div class="absolute bottom-16 flex items-center gap-3">
                     <div class="w-14 h-14 rounded-full overflow-hidden">
-                        <img src="{{asset('assets/me.jpg')}}" class="object-cover object-center" alt="">
+                        <img src="{{asset('assets/me.jpg')}}" class="object-cover object-center " alt="">
                     </div>
+
                     <p>{{auth()->user()->username}}</p>
 
                 </div>

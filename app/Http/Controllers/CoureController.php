@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Coure;
 use App\Http\Requests\StoreCoureRequest;
 use App\Http\Requests\UpdateCoureRequest;
+use App\Models\Instructor;
+use Illuminate\Http\Request;
 
 class CoureController extends Controller
 {
@@ -13,23 +15,55 @@ class CoureController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Coure::latest()->get();
+
+        return view('posts.show_course', compact('courses'));
     }
+
+    
+ 
+
+    public function showInstructors()
+    {
+        $instructors = Instructor::latest()->get();
+        return view('posts.add_course', compact('instructors'));
+    }
+    
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        
+       
+
+
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCoureRequest $request)
+    public function store(Request $request)
     {
-        //
+
+        // dd('ok');
+        
+        $fields = $request->validate([
+            'title'=>['required'],
+            'description'=>['required'],
+            'duration'=>['required'],
+            'instructor_id' => ['required', 'exists:instructors,id'],
+        ]);
+
+        Coure::create($fields);
+
+        // return redirect()->route('home');
+       
+        return back()->with('success','Your post was created');
+
     }
 
     /**
@@ -63,4 +97,8 @@ class CoureController extends Controller
     {
         //
     }
+
+
 }
+
+

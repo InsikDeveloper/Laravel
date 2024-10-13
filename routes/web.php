@@ -1,41 +1,41 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CoureController;
+use App\Http\Controllers\InstructorController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-// Route::view('/','posts.index') -> name('home');
 
+Route::middleware('auth')->group(function(){
+    Route::view('/dashboard','posts.index') -> name('dashboard');
 
-Route::view('/', 'posts.index')->name('home');
+    Route::resource('instructors', InstructorController::class);
+    Route::resource('coures', CoureController::class);
 
+    Route::view('/add-instructor','posts.add_instructor')->name('add.instructor');
+    Route::get('/add_course',[CoureController::class , 'showInstructors'])->name('add_course');
+    
+    Route::post('/logout',[AuthController::class, 'logout'])->name('logout');
+});
 
+Route::middleware('guest')->group(function(){
+
+   // Login
+   Route::view('/', 'auth.login')->name('login');
+   Route::view('/login','auth.login')->name('login');
+   Route::post('/login',[AuthController::class, 'login'])->name('login');
 // Register
 Route::view('/register','auth.register')->name('register');
 Route::post('register',[AuthController::class, 'register'])->name('register');
 
-// Login
-Route::view('/login','auth.login')->name('login');
-Route::post('/login',[AuthController::class, 'login'])->name('login');
 
-
-
-Route::post('/logout',[AuthController::class, 'logout'])->name('logout');
-
-
-Route::get('/courses', [CourseController::class, 'showCourses'])->name('courses');
-Route::get('/courses/{id}', [CourseController::class, 'showCourse'])->name('show_course');
+});
 
 
 
 
-Route::view('/add_course','posts.add_course') -> name('add_course');
-Route::post('add_course',[CourseController::class, 'addCourse']);
-
-
-Route::delete('/courses/{id}', [CourseController::class, 'delete'])->name('delete');
 
