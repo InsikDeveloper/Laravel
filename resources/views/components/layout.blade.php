@@ -30,13 +30,13 @@
         <div class="flex">
             <div class="nav relative ">
                 <header>
-                    <h1><a href="{{route('dashboard')}}" class="text-xl font-semibold border-b-[1px] pb-3 border-white/30 text-white/90">FreeCodeCamp ni Michael</a></h1>
+                    <h1><a href="{{route('dashboard.index')}}" class="text-xl font-semibold border-b-[1px] pb-3 border-white/30 text-white/90">FreeCodeCamp ni Michael</a></h1>
                      
                 </header>
                 <nav>
                     <div class="navigation ">
                         <span><i class="bi bi-house"></i></span>
-                        <a href="{{route('dashboard')}}">Dashboard</a>
+                        <a href="{{route('dashboard.index')}}">Dashboard</a>
                     </div>
 
                     <div class="navigation">

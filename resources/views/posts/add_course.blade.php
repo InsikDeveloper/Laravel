@@ -46,21 +46,17 @@
             {{-- Course Instructor --}}
 
                 <div class="w-1/2 space-y-2">
-                    <label for="duration" class="block text-center">Select Instructor</label>
-                    {{-- <input type="text" name="duration" placeholder="course duration..." class="border rounded p-2 w-full">--}}
-                    <select name="duration" id="duration" class="w-full text-center py-2 bg-slate-900/10">
+                    <label for="instructor_id" class="block text-center">Select Instructor</label>
+                    {{-- <input type="text" name="instructor_id" placeholder="course instructor_id..." class="border rounded p-2 w-full">--}}
+                    <select name="instructor_id" id="instructor_id" class="w-full text-center py-2 bg-slate-900/10">
                         @foreach ($instructors as $item)
                         <option value="{{$item->id}}" {{ old('instructor_id') == $item->id ? 'selected' : '' }}>
                             {{$item->first_name}} {{$item->last_name}}
                         </option>
-                        
                         @endforeach
-                        {{-- <option value="2 Weeks">2 Weeks</option>
-                        <option value="1 Month">1 Month</option>
-                        <option value="3 Months">3 Months</option>
-                        <option value="6 Months">6 Months</option> --}}
+                       
                     </select>
-                    @error('duration')
+                    @error('instructor_id')
                     <p class="font-sm text-red-500">{{$message}}</p>
                 @enderror
                 </div>

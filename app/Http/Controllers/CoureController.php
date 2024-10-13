@@ -95,7 +95,10 @@ class CoureController extends Controller
      */
     public function destroy(Coure $coure)
     {
-        //
+        $coure->delete();
+
+        return back()->with('success','Item deleted succesfully');
+      
     }
 
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CoureController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InstructorController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function(){
-    Route::view('/dashboard','posts.index') -> name('dashboard');
+    Route::resource('dashboard',DashboardController::class) ;
 
     Route::resource('instructors', InstructorController::class);
     Route::resource('coures', CoureController::class);

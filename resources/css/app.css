@@ -12,7 +12,7 @@
     }
 
     i {
-        @apply text-xl;
+        @apply text-sm;
     }
 
     .card {

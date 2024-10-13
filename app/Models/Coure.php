@@ -17,10 +17,10 @@ class Coure extends Model
         'instructor_id'
     ];
 
-    // public function instructor()
-    // {
-    //     return $this->belongsTo(Instructor::class);
-    // }
+    public function instructor()
+    {
+        return $this->belongsTo(Instructor::class);
+    }
     
 
 }
